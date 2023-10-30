@@ -163,7 +163,7 @@ if __name__ == '__main__':
     model = resnet50().to(device)
 
     batch_size = 4
-    x = torch.randn(batch_size, 3, 224, 224)
+    x = torch.randn(batch_size, 3, 224, 224).to(device)
     out = model(x).to(device)
 
     assert out.shape == torch.Size([batch_size, 1000])
